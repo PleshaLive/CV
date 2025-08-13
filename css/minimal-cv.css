@@ -51,6 +51,9 @@ body {
     align-items: center;
     gap: 40px;
     position: relative;
+    background-image: linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.55)), url('../photo3.png');
+    background-size: cover, cover;
+    background-position: center, center;
 }
 
 .cv-header::after {
@@ -202,35 +205,7 @@ body {
     line-height: 1.4;
 }
 
-/* Header text block with background photo */
-.header-info.bg-photo {
-    position: relative;
-    padding: 18px 20px;
-    border-radius: 8px;
-    overflow: hidden;
-    isolation: isolate; /* ensure overlay stacks above bg */
-}
-
-.header-info.bg-photo::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: url('../Photo.png') center/cover no-repeat;
-    filter: brightness(0.45) saturate(1.05);
-    z-index: -2; /* behind overlay */
-}
-
-.header-info.bg-photo::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.55));
-    z-index: -1; /* overlay between bg and content */
-}
-
-.header-info.bg-photo h1 { color: #fff; }
-.header-info.bg-photo h2 { color: var(--accent-orange); text-shadow: 0 1px 2px rgba(0,0,0,0.4); }
-.header-info.bg-photo .specialization { color: #ddd; }
+/* Remove previous per-block header photo styles */
 
 .header-right {
     min-width: 260px;
