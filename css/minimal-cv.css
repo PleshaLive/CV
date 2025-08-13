@@ -356,9 +356,10 @@ a:hover {
 .skill-progress {
     height: 100%;
     background: var(--accent-orange); /* single-color fill */
+    background-image: none; /* force no gradient */
     border-radius: 3px;
     transition: width 0.8s ease;
-    box-shadow: 0 0 12px rgba(220,92,51,0.25);
+    box-shadow: none; /* remove glow for a flat, uniform look */
 }
 
 /* Languages */
