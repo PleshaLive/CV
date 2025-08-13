@@ -22,9 +22,9 @@
 
   // Layered scallop/arch pattern parameters
   const LAYERS = [
-    { height: 120, speed: 0.08, alpha: 0.12, stroke: IVORY, fill: 'rgba(29,44,30,0.35)' },
-    { height: 160, speed: 0.05, alpha: 0.10, stroke: 'rgba(220,92,51,0.40)', fill: 'rgba(29,44,30,0.28)' },
-    { height: 220, speed: 0.03, alpha: 0.10, stroke: 'rgba(231,228,212,0.30)', fill: 'rgba(29,44,30,0.22)' }
+    { height: 120, speed: 0.045, alpha: 0.10, stroke: IVORY, fill: 'rgba(29,44,30,0.30)' },
+    { height: 160, speed: 0.030, alpha: 0.09,  stroke: 'rgba(220,92,51,0.32)', fill: 'rgba(29,44,30,0.24)' },
+    { height: 220, speed: 0.018, alpha: 0.08,  stroke: 'rgba(231,228,212,0.26)', fill: 'rgba(29,44,30,0.18)' }
   ];
 
   let time = 0;
@@ -43,7 +43,7 @@
     ctx.lineWidth = 2;
 
     for(let i=0;i<cols;i++){
-      const cx = (i-1)*diameter + (time*8 % diameter) - diameter/2; // subtle lateral drift
+  const cx = (i-1)*diameter + (time*4 % diameter) - diameter/2; // slower lateral drift
       const cy = yBase;
       ctx.beginPath();
       // Draw top half-arc (scallop)
@@ -73,13 +73,13 @@
     }
 
     // subtle shimmer lines
-    ctx.globalAlpha = 0.06;
+    ctx.globalAlpha = 0.035;
     ctx.strokeStyle = ORANGE;
     ctx.lineWidth = 1;
-    for(let y=0;y<h;y+=60){
+    for(let y=0;y<h;y+=80){
       ctx.beginPath();
-      ctx.moveTo(0, y + (Math.sin((y+time*8)*0.01)*4));
-      ctx.lineTo(w, y + (Math.cos((y+time*8)*0.01)*4));
+      ctx.moveTo(0, y + (Math.sin((y+time*6)*0.009)*3));
+      ctx.lineTo(w, y + (Math.cos((y+time*6)*0.009)*3));
       ctx.stroke();
     }
 
