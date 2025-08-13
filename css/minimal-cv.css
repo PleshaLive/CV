@@ -8,14 +8,14 @@
 :root {
     --bg-primary: #0f0f0f;
     --bg-secondary: #1a1a1a;
-    --bg-card: #242424;
-    --bg-sidebar: #151c18; /* sidebar background (behind Key Statistics, Technical Expertise) */
+    --bg-card: #24242460;
+    --bg-sidebar: #101410; /* sidebar background (behind Key Statistics, Technical Expertise) */
     --accent-gold: #1D2C1E;
     --accent-orange: #DC5C33;
     --accent-silver: #c0c0c0;
-    --text-primary: #ffffff;
-    --text-secondary: #a0a0a0;
-    --text-muted: #707070;
+    --text-primary: #dddcdc;
+    --text-secondary: #cccbc2;
+    --text-muted: #E7E4D4;
     --border-color: #333333;
     --shadow-subtle: 0 2px 8px rgba(0, 0, 0, 0.3);
     --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.4);
