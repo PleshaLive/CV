@@ -69,6 +69,90 @@ body {
     gap: 25px;
 }
 
+/* Photo cluster: main + 2x2 thumbnails */
+.photo-cluster {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.work-photos {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 8px;
+    align-items: start;
+    justify-items: start;
+}
+
+/* Masonry layout for variable-sized photos */
+.work-photos.masonry {
+    display: block;                 /* override grid */
+    column-count: 2;
+    column-gap: 8px;
+}
+
+.work-photos.masonry .work-thumb {
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    -moz-column-break-inside: avoid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 0 8px 0;             /* match gap visually */
+}
+
+.work-photos.masonry .work-thumb img {
+    max-width: 100%;               /* respect column width */
+    height: auto;
+}
+
+/* Mosaic variant: asymmetric like the lower example */
+.work-photos.mosaic {
+    grid-template-columns: repeat(2, minmax(140px, 1fr));
+    grid-auto-rows: 110px; /* base row height */
+    grid-auto-flow: dense;
+}
+
+/* let grid control sizing inside mosaic */
+.work-photos.mosaic .work-thumb {
+    width: 100%;
+    height: auto;
+    min-height: 110px;
+}
+
+/* make the 3rd tile taller (spans two rows) */
+.work-photos.mosaic .work-thumb:nth-child(3) {
+    grid-row: span 2;
+}
+
+/* explicit span helper */
+.work-photos.mosaic .work-thumb.wide {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+.work-thumb {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    border-radius: 6px;
+    overflow: hidden; /* keep rounded corners on images */
+    background: linear-gradient(135deg, var(--accent-gold), var(--accent-orange));
+    border: 1px solid var(--border-color);
+    box-shadow: 0 0 0 2px rgba(255,255,255,0.02), 0 8px 20px rgba(0,0,0,0.35);
+}
+
+.work-thumb img {
+    width: auto;
+    height: auto;
+    max-width: 220px;   /* desktop max bounds */
+    max-height: 160px;
+    object-fit: contain; /* keep original aspect, no crop */
+    object-position: center;
+    display: block;
+}
+
 .profile-photo {
     width: 270px;
     height: 270px;
@@ -271,7 +355,7 @@ a:hover {
 
 .skill-progress {
     height: 100%;
-    background: linear-gradient(90deg, var(--accent-orange), var(--accent-gold));
+    background: var(--accent-orange); /* single-color fill */
     border-radius: 3px;
     transition: width 0.8s ease;
     box-shadow: 0 0 12px rgba(220,92,51,0.25);
@@ -645,6 +729,49 @@ a:hover {
         gap: 20px;
         width: 100%;
     }
+    .photo-cluster {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .work-photos {
+        grid-template-columns: repeat(2, auto);
+        gap: 6px;
+    }
+    .work-photos.masonry {
+        column-count: 2;
+        column-gap: 6px;
+    }
+    .work-photos.masonry .work-thumb { margin-bottom: 6px; }
+    .work-photos.masonry .work-thumb img { max-width: 100%; }
+    .work-thumb {
+        width: auto;
+        height: auto;
+    }
+    .work-thumb img {
+        max-width: 160px; /* tablet bounds */
+        max-height: 120px;
+    }
+    /* Keep mosaic as 2 columns on tablet, reduce row height */
+    .work-photos.mosaic {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 90px;
+    }
+    .work-photos.mosaic .work-thumb {
+        width: 100%;
+        min-height: 90px;
+        height: auto;
+    }
+    .work-photos.mosaic .work-thumb:nth-child(3) {
+        grid-row: span 2;
+    }
+    .work-photos.mosaic .work-thumb.wide {
+        grid-column: span 2;
+    }
+    .work-photos.mosaic .work-thumb {
+        width: 70px;
+        height: 50px; /* keep a slightly wide feel on tablets */
+    }
     
     .profile-photo {
         width: 80px;
@@ -719,6 +846,42 @@ a:hover {
         flex-direction: column;
         gap: 15px;
         text-align: center;
+    }
+    .photo-cluster {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .work-photos {
+        grid-template-columns: repeat(2, auto);
+        gap: 6px;
+    }
+    .work-photos.masonry {
+        column-count: 2;
+        column-gap: 6px;
+    }
+    .work-photos.masonry .work-thumb { margin-bottom: 6px; }
+    .work-thumb {
+        width: auto;
+        height: auto;
+    }
+    .work-thumb img {
+        max-width: 120px; /* phone bounds */
+        max-height: 90px;
+    }
+    .work-photos.mosaic {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 70px;
+    }
+    .work-photos.mosaic .work-thumb {
+        width: 100%;
+        min-height: 70px;
+        height: auto;
+    }
+    .work-photos.mosaic .work-thumb:nth-child(3) {
+        grid-row: span 2;
+    }
+    .work-photos.mosaic .work-thumb.wide {
+        grid-column: span 2;
     }
     
     .profile-photo {
