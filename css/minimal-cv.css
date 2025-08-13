@@ -9,6 +9,7 @@
     --bg-primary: #0f0f0f;
     --bg-secondary: #1a1a1a;
     --bg-card: #242424;
+    --bg-sidebar: #151c18; /* sidebar background (behind Key Statistics, Technical Expertise) */
     --accent-gold: #1D2C1E;
     --accent-orange: #DC5C33;
     --accent-silver: #c0c0c0;
@@ -264,7 +265,7 @@ a:hover {
 
 /* Sidebar */
 .cv-sidebar {
-    background: var(--bg-primary);
+    background: var(--bg-sidebar);
     padding: 40px 35px;
     border-right: 1px solid var(--border-color);
 }
@@ -656,7 +657,7 @@ a:hover {
 
 /* Table aesthetics */
 .tournament-table table tr:hover td {
-    background: rgba(255,255,255,0.02);
+    background: rgba(255, 0, 0, 0.02);
 }
 
 /* Education */
