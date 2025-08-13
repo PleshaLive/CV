@@ -7,13 +7,13 @@
 
 :root {
     --bg-primary: #0f0f0f;
-    --bg-secondary: #1a1a1a;
+    --bg-secondary: #0f0f0f;
     --bg-card: #24242460;
     --bg-sidebar: #101410; /* sidebar background (behind Key Statistics, Technical Expertise) */
     --accent-gold: #1D2C1E;
     --accent-orange: #DC5C33;
     --accent-silver: #c0c0c0;
-    --text-primary: #dddcdc;
+    --text-primary: #E7E4D4;
     --text-secondary: #cccbc2;
     --text-muted: #E7E4D4;
     --border-color: #333333;
@@ -31,6 +31,16 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+/* Full-viewport background canvas for particles */
+.bg-canvas {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;            /* behind everything */
+    pointer-events: none;  /* clicks pass through */
+}
+
 /* Container */
 .cv-container {
     max-width: 1200px;
@@ -40,6 +50,8 @@ body {
     overflow: hidden;
     box-shadow: var(--shadow-medium);
     border: 1px solid var(--border-color);
+    position: relative; /* layer above bg canvas */
+    z-index: 1;
 }
 
 /* Header */
