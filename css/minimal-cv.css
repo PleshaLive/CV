@@ -31,41 +31,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Sticky Top Navigation */
-.top-nav {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    backdrop-filter: blur(8px);
-    background: linear-gradient(180deg, rgba(0,0,0,0.65), rgba(0,0,0,0.35));
-    border-bottom: 1px solid rgba(220,92,51,0.15);
-}
-
-.top-nav .nav-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 10px 16px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.top-nav .brand {
-    font-weight: 700;
-    color: var(--text-primary);
-    letter-spacing: 0.08em;
-}
-
-.nav-links { list-style: none; display: flex; gap: 18px; }
-.nav-links a {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    padding: 8px 10px;
-    border-radius: 6px;
-    transition: 0.2s ease;
-}
-.nav-links a:hover { color: var(--accent-orange); background: rgba(220,92,51,0.08); }
-.nav-links a.active { color: var(--accent-orange); background: rgba(220,92,51,0.12); border: 1px solid rgba(220,92,51,0.25); }
+/* Sticky Top Navigation - removed */
 
 /* Full-viewport background canvas for particles */
 .bg-canvas {
@@ -871,7 +837,6 @@ a:hover {
         grid-template-columns: 1fr 1fr;
         gap: 10px;
     }
-    .nav-links { display: none; }
     
     .stats-grid {
         grid-template-columns: 1fr 1fr;
@@ -976,7 +941,6 @@ a:hover {
     .contact-info {
         grid-template-columns: 1fr;
     }
-    .top-nav .nav-inner { padding: 8px 12px; }
     
     .stats-grid {
         grid-template-columns: 1fr;
