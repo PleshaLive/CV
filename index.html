@@ -8,12 +8,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
+<body id="top">
     <canvas id="bgCanvas" class="bg-canvas" aria-hidden="true"></canvas>
+    <!-- Sticky Top Navigation -->
+    <nav class="top-nav">
+        <div class="nav-inner">
+            <a href="#top" class="brand">Pleshakov</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#major">Major</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
     <!-- CV Container -->
     <div class="cv-container">
         <!-- Header Section -->
-        <header class="cv-header">
+    <header class="cv-header reveal" id="contact">
             <div class="header-left">
                 <div class="photo-cluster">
                     <div class="profile-photo">
@@ -53,11 +67,11 @@
         </header>
 
         <!-- Main Content -->
-        <main class="cv-main">
+    <main class="cv-main">
             <!-- Left Column -->
             <aside class="cv-sidebar">
                 <!-- Key Statistics at Top -->
-                <section class="cv-section">
+        <section class="cv-section reveal" id="stats">
                     <h3>Key Statistics</h3>
                     <div class="stats-grid">
                         <div class="stat-item">
@@ -99,7 +113,7 @@
                 </section>
 
                 <!-- Technical Expertise -->
-                <section class="cv-section">
+                <section class="cv-section reveal" id="skills">
                     <h3>Technical Expertise</h3>
                     <div class="skills-list">
                         <div class="skill-item">
@@ -187,7 +201,7 @@
                 </section>
 
                 <!-- Languages -->
-                <section class="cv-section">
+                <section class="cv-section reveal" id="languages">
                     <h3>Languages</h3>
                     <div class="languages-list">
                         <div class="language-item">
@@ -209,7 +223,7 @@
             <!-- Right Column -->
             <div class="cv-content">
                 <!-- Professional Summary -->
-                <section class="cv-section">
+                <section class="cv-section reveal" id="about">
                     <h3>About Me</h3>
                     <p>I am an experienced esports broadcast director with over 10 years in live production, specializing in tournaments, world championships, and major events. Confident in working with Blackmagic and vMix, I have deep expertise in studio switching, production workflows, and communication within high-pressure live environments.</p>
 
@@ -219,7 +233,7 @@
                 </section>
 
                 <!-- Professional Experience -->
-                <section class="cv-section">
+                <section class="cv-section reveal" id="experience">
                     <h3>Work Experience</h3>
                     <div class="experience-list">
                         <div class="experience-item">
@@ -277,7 +291,7 @@
                 </section>
 
                 <!-- Tournament Portfolio -->
-                <section class="cv-section tournament-portfolio">
+                <section class="cv-section tournament-portfolio reveal" id="portfolio">
                     <h3>Tournament Portfolio</h3>
                     <p>Multi-title experience across CS:GO, Dota 2, PUBG, Valorant, Rocket League, Fighting Games. Worked on majors, premier series, and international leagues with roles covering directing, observing, and broadcast management.</p>
 
@@ -302,7 +316,7 @@
                 </section>
 
                 <!-- Major Productions -->
-                <section class="cv-section">
+                <section class="cv-section reveal" id="major">
                     <h3>Major Productions</h3>
                     <div class="tournaments-grid">
                         <div class="tournament-item">
@@ -356,7 +370,7 @@
                 </section>
 
                 <!-- Education -->
-                <section class="cv-section">
+                <section class="cv-section reveal" id="education">
                     <h3>Education</h3>
                     <div class="education-list">
                         <div class="education-item">
@@ -369,6 +383,8 @@
         </div>
         </main>
             </div>
+    <button class="to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+    <script src="js/ui.js"></script>
     <script src="js/sunburst-rays.js"></script>
 </body>
 </html>
